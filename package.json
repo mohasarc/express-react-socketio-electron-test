@@ -1,0 +1,27 @@
+{
+  "name": "react-electron-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "electron-dev": "concurrently \"npm run server\" \"npm start --prefix client\" \"wait-on http://localhost:3000 && electron .\""
+  },
+  "author": "Mohammed S. Yaseen",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.2.0",
+    "electron": "^9.0.5",
+    "electron-builder": "^22.7.0",
+    "electron-is-dev": "^1.2.0",
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0",
+    "wait-on": "^5.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
