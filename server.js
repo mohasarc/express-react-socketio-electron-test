@@ -1,3 +1,8 @@
+/**
+ * @author Mohammed S. Yaseen
+ * @version 6/7/2020
+ */
+
 /////////// FS dependencies //////////////
 const fs = require('fs');
 const { COPYFILE_EXCL } = fs.constants; // Used to prevent overriding the destination file
@@ -112,6 +117,7 @@ function rename (filePath, newName) {
     }
 }
 
+//////////////////////////// socket.io setup ///////////////////////////
 io.on("connection", (socket) => {
   console.log("New client connected");
     socket.on('copy', (data) => {
@@ -136,8 +142,8 @@ io.on("disconnect", () => {
 console.log("Client disconnected");
 });
 
-var count = 1;
-setInterval(() => {
-    // io.emit('dataChange', count++);
-    // console.log('emiting new data', count);
-}, 200);
+// var count = 1;
+// setInterval(() => {
+//     // io.emit('dataChange', count++);
+//     // console.log('emiting new data', count);
+// }, 200);
